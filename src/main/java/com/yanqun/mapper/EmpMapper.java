@@ -1,4 +1,5 @@
 package com.yanqun.mapper;
+import com.github.pagehelper.ISelect;
 import com.yanqun.pojo.Emp;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -60,4 +61,12 @@ public interface EmpMapper {
      * @param emp
      */
     void update(Emp emp);
+
+    /**
+     * 根据用户名和密码查询员工
+     * @param emp
+     * @return
+     */
+    @Select("select * from emp where username = #{username} and password = #{password}")
+    Emp getByUsernameAndPassword(Emp emp);
 }
