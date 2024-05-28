@@ -29,7 +29,7 @@ public class DeptServiceImpl implements DeptService {
     @Override
     public void delete(Integer id) {
         deptMapper.deleteById(id);
-        Integer a = 1/0;
+//        Integer a = 1/0;
         empMapper.deleteByDeptId(id);//根据部门ID删除该部门下的员工
     }
 

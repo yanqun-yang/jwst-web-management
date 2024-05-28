@@ -1,4 +1,5 @@
 package com.yanqun.controller;
+import com.yanqun.anno.Log;
 import com.yanqun.pojo.Dept;
 import com.yanqun.pojo.Result;
 import com.yanqun.service.DeptService;
@@ -38,6 +39,7 @@ public class DeptController {
     /**
      * 删除部门
      */
+    @Log
     @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id){
         log.info("根据id删除部门:{}", id);
@@ -51,6 +53,7 @@ public class DeptController {
      * @param dept
      * @return
      */
+    @Log
     @PostMapping
     public Result add(@RequestBody Dept dept){
         log.info("新增部门:{}", dept);
@@ -77,6 +80,7 @@ public class DeptController {
      * @param dept
      * @return
      */
+    @Log
     @PutMapping
     public Result update(@RequestBody Dept dept){
         log.info("更新部门{}", dept);
